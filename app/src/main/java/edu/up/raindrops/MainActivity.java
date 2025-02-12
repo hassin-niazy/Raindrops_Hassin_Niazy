@@ -1,5 +1,11 @@
-package edu.up.raindrops;
+/**
+ * @Author Hassinullah Niazy
+ * This is my app that I designed for Assignment Part A of CS301 course.
+ * This app will randomly draw circles on the screen between 6 - 12 circles each time the app runs.
+ * The color of these circle are also generated randomly so, the circle will be drawn on different colors.
+ */
 
+package edu.up.raindrops;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;

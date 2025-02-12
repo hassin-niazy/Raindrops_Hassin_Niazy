@@ -1,5 +1,11 @@
-package edu.up.raindrops;
+/**
+ * @Author Hassinullah Niazy
+ * This is my main class for the circle that draws circles around the screen.
+ * This is class is based on my learnings from CS301 class codings so, far, which is based from the Spot Class in our lecture.
+ *
+ */
 
+package edu.up.raindrops;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -7,7 +13,7 @@ import android.graphics.Paint;
 
 import java.util.Random;
 
-/** This is the main class for the drawing circles */
+/** This is the main class for the Circles to draw */
 public class Circle {
 
     protected int xPos; //x-Position
@@ -36,13 +42,15 @@ public class Circle {
         paint();
     }
 
+    /** Commenting it because we never used it in the App.
+
     //User-defined constructor:
     public Circle (int _xPos, int _yPos) {
         xPos = _xPos;
         yPos = _yPos;
         paint();
     }
-
+*/
     public void draw (Canvas screen) {
 
         screen.drawCircle(xPos, yPos, radius, paint);

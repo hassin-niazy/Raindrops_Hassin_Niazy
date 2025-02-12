@@ -1,3 +1,10 @@
+/**
+ * @Author Hassinullah Niazy
+ * This is my main class for app view that draws circles around the screen.
+ * This is class is based on my learnings from CS301 class codings so, far, which is based from the LeArt Class in our lecture.
+ *
+ */
+
 package edu.up.raindrops;
 
 import android.content.Context;
@@ -19,6 +26,7 @@ public class GameView extends SurfaceView {
         super.setBackgroundColor(color);
     }
 
+    //This class show all the drawings on the screen.
     public GameView(Context context, AttributeSet attrs) {
         super(context, attrs);
         setWillNotDraw(false);
@@ -38,7 +46,7 @@ public class GameView extends SurfaceView {
     {
        for (Circle newCircle: drawing)
        {
-           newCircle.draw(screen);
+           newCircle.draw(screen); //Draw circles from ArrayList on the screen.
        }
     }
 
