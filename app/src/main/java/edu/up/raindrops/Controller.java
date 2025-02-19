@@ -21,11 +21,11 @@ public class Controller implements SeekBar.OnSeekBarChangeListener {
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
         if(seekBar.getId() == R.id.rightLeftSeek) {
-            _gameView.Superstar.setXPos(progress + 25);
+            _gameView.superstar.setXPos(progress + 25);
             _gameView.invalidate();
         }
         else if(seekBar.getId() == R.id.upDownSeek) {
-            _gameView.Superstar.setYPos(progress + 25);
+            _gameView.superstar.setYPos(progress + 25);
             _gameView.invalidate();
         }
     }
