@@ -18,8 +18,11 @@ import java.util.Random;
 
 public class GameView extends SurfaceView {
 
+    Circle Superstar; //The Super Circle
+    Random rand = new Random();
+    int count = rand.nextInt(6) + 6;
 
-    private ArrayList<Circle> drawing  = new ArrayList<>();
+    private ArrayList<Circle> drawing  = new ArrayList<>(); //Array of Circles
 
     @Override
     public void setBackgroundColor(int color) {
@@ -31,13 +34,12 @@ public class GameView extends SurfaceView {
         super(context, attrs);
         setWillNotDraw(false);
         setBackgroundColor(Color.rgb(205,240,255));
-
-        Random rand = new Random();
-        int count = rand.nextInt(6) + 6;
         for (int i = 0; i < count; i++)
         {
             drawing.add(new Circle());
         }
+     //Random Circle to be controlled by Seekbars.
+        Superstar = drawing.get(0);
 
     }
 
@@ -47,7 +49,30 @@ public class GameView extends SurfaceView {
        for (Circle newCircle: drawing)
        {
            newCircle.draw(screen); //Draw circles from ArrayList on the screen.
+
        }
+
+       int deleteMe = -1; // to remove merged circles from the screen.
+
+        //loop to compare the arraylist circles with main circle, if in borders to merge it.
+        for (int i = 1; i < drawing.size(); i++)
+        {
+            Circle cand = drawing.get(i);
+            int a = cand.getXPos() - Superstar.getXPos();
+            int b = cand.getYPos() - Superstar.getYPos();
+            int c = (int) Math.sqrt(a*a+b*b);
+
+            if(c < 60 ){
+                Superstar.avgColor(drawing.get(i));
+                deleteMe = i;
+            }
+        }
+
+        //merging the circle.
+        if(deleteMe > -1){
+            drawing.remove(deleteMe);};
+
+
     }
 
 
